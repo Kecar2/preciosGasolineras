@@ -1,12 +1,12 @@
 import React from 'react'
 
-const Pagination = ({ setPageNumber }) => {
+const Pagination = ({ setNumber }) => {
     let siguiente = () => {
-        setPageNumber((x) => x + 1);
+        setNumber((x) => x + 1);
     };
 
     let volver = () => {
-        setPageNumber((x) => x - 1);
+        setNumber((x) => x - 1);
     };
     return (
         <div className="container d-flex justify-content-center gap-5 my-5">
