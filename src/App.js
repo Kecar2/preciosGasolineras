@@ -12,14 +12,11 @@ import './App.css';
 
 function App() {
 
-  let [search, setSearch] = useState("");
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
 
   let [fetchedData, updateFetchedData] = useState([]);
   let { ListaEESSPrecio } = fetchedData;
-
-  //let api = `https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/`;
 
   useEffect(() => {
     fetch("https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/")
@@ -49,7 +46,7 @@ function App() {
       <div className="App">
         <h1 className="text-center ubuntu mb-3"> Precios <span className="text-primary"> Gasolineras </span></h1>
 
-        <Search setSearch={setSearch} />
+        <Search />
 
         <div className="container">
           <div className="row justify-content-center">

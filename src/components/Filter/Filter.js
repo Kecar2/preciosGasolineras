@@ -1,11 +1,11 @@
 import React from 'react';
 
 const Filters = () => {
-    return (
-        <div>
-          Filters  
-        </div>
-    )
+  return (
+    <div>
+      filter
+    </div>
+  )
 }
 
 export default Filters;
