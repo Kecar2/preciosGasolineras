@@ -21,7 +21,7 @@ const Card = ({ ListaEESSPrecio }) => {
             let PrecioGasolina98E10 = x["Precio Gasolina 98 E10"];
 
 
-            let { id, Rótulo, Municipio, Dirección, Horario } = x;
+            let { id, Rótulo, Municipio, Dirección, Horario, Provincia } = x;
             return (
                 <div key={id} className="col-6 mb-4 position-relative">
                     <div className={styles.card}>
@@ -30,6 +30,7 @@ const Card = ({ ListaEESSPrecio }) => {
                             <div className="fs-6 fw-bold mb-4">{Horario}</div>
                             <div className="">
                                 <div className="fs-6">{Rótulo}</div>
+                                <div className="fs-6">{Provincia}</div>
                                 <div className="fs-9">{Dirección}</div>
                                 {(() => {
                                     if (PrecioGasolina95E5 >= "2,000") {
@@ -39,12 +40,12 @@ const Card = ({ ListaEESSPrecio }) => {
                                     }
                                     else if (PrecioGasolina95E5 < "2") {
                                         return (
-                                            <div className="fw-bold fs-6">Precio Gasolina 95 E5:<span className="badge bg-success">{PrecioGasolina95E5}</span></div>
+                                            <div className="fw-bold fs-6">Gasolina 95 E5:<span className="badge bg-success">{PrecioGasolina95E5}</span></div>
                                         )
                                     }
                                     else {
                                         return (
-                                            <div className="fw-bold fs-6">Precio Gasolina 95 E5:<span className="badge bg-secondary">Sin dato</span></div>
+                                            <div className="fw-bold fs-6">Gasolina 95 E5:<span className="badge bg-secondary">Sin dato</span></div>
                                         )
                                     }
                                 })()}
@@ -52,17 +53,17 @@ const Card = ({ ListaEESSPrecio }) => {
                                 {(() => {
                                     if (PrecioGasolina98E5 >= "2,000") {
                                         return (
-                                            <div className="fw-bold fs-6">Precio Gasolina 98 E5:<span className="badge bg-danger">{PrecioGasolina98E5}</span></div>
+                                            <div className="fw-bold fs-6">Gasolina 98 E5:<span className="badge bg-danger">{PrecioGasolina98E5}</span></div>
                                         )
                                     }
                                     else if (PrecioGasolina98E5 < "2") {
                                         return (
-                                            <div className="fw-bold fs-6">Precio Gasolina 98 E5:<span className="badge bg-success">{PrecioGasolina98E5}</span></div>
+                                            <div className="fw-bold fs-6">Gasolina 98 E5:<span className="badge bg-success">{PrecioGasolina98E5}</span></div>
                                         )
                                     }
                                     else {
                                         return (
-                                            <div className="fw-bold fs-6">Precio Gasolina 98 E5:<span className="badge bg-secondary">Sin dato</span></div>
+                                            <div className="fw-bold fs-6">Gasolina 98 E5:<span className="badge bg-secondary">Sin dato</span></div>
                                         )
                                     }
                                 })()}
@@ -70,17 +71,17 @@ const Card = ({ ListaEESSPrecio }) => {
                                 {(() => {
                                     if (PrecioGasoleoA >= "2,000") {
                                         return (
-                                            <div className="fw-bold fs-6">Precio Gasoleo A:<span className="badge bg-danger">{PrecioGasoleoA}</span></div>
+                                            <div className="fw-bold fs-6"> Gasoleo A:<span className="badge bg-danger">{PrecioGasoleoA}</span></div>
                                         )
                                     }
                                     else if (PrecioGasoleoA < "2") {
                                         return (
-                                            <div className="fw-bold fs-6">Precio Gasoleo A:<span className="badge bg-success">{PrecioGasoleoA}</span></div>
+                                            <div className="fw-bold fs-6">Gasoleo A:<span className="badge bg-success">{PrecioGasoleoA}</span></div>
                                         )
                                     }
                                     else {
                                         return (
-                                            <div className="fw-bold fs-6">Precio Gasoleo A:<span className="badge bg-secondary">Sin dato</span></div>
+                                            <div className="fw-bold fs-6">Gasoleo A:<span className="badge bg-secondary">Sin dato</span></div>
                                         )
                                     }
                                 })()}
@@ -88,17 +89,22 @@ const Card = ({ ListaEESSPrecio }) => {
                                 {(() => {
                                     if (PrecioGasoleoPremium >= "2,000") {
                                         return (
-                                            <div className="fw-bold fs-6">Precio Gasoleo Premium:<span className="badge bg-danger">{PrecioGasoleoPremium}</span></div>
+                                            <div className="fw-bold fs-6">Gasoleo Premium:<span className="badge bg-danger">{PrecioGasoleoPremium}</span></div>
                                         )
                                     }
                                     else if (PrecioGasoleoPremium < "2") {
                                         return (
-                                            <div className="fw-bold fs-6">Precio Gasoleo Premium:<span className="badge bg-success">{PrecioGasoleoPremium}</span></div>
+                                            <div className="fw-bold fs-6">Gasoleo Premium:<span className="badge bg-success">{PrecioGasoleoPremium}</span></div>
+                                        )
+                                    }
+                                    else if (Object.keys(PrecioGasoleoPremium).length === '""') {
+                                        return (
+                                            <div className="fw-bold fs-6">Gasoleo Premium:<span className="badge bg-secondary">no data</span></div>
                                         )
                                     }
                                     else {
                                         return (
-                                            <div className="fw-bold fs-6">Precio Gasoleo Premium:<span className="badge bg-secondary">Sin dato</span></div>
+                                            <div className="fw-bold fs-6">Gasoleo Premium:<span className="badge bg-secondary">Sin dato</span></div>
                                         )
                                     }
                                 })()}

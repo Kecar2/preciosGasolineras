@@ -12,6 +12,8 @@ import './App.css';
 
 function App() {
 
+  let [search, setSearch] = useState("Abengibre");
+
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -19,7 +21,7 @@ function App() {
   let { ListaEESSPrecio } = fetchedData;
 
   useEffect(() => {
-    fetch("https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/")
+    fetch(`https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/?municipio=${search}`)
       .then(res => res.json())
       .then(
         (result) => {
@@ -46,16 +48,18 @@ function App() {
       <div className="App">
         <h1 className="text-center ubuntu mb-3"> Precios <span className="text-primary"> Gasolineras </span></h1>
 
-        <Search />
+        <Search setSearch={setSearch} data={ListaEESSPrecio}/>
 
         <div className="container">
-          <div className="row justify-content-center">
+          <div className="row">
             <Filter />
+
             <div className="col-lg-8 col-12">
               <div className="row">
                 <Card ListaEESSPrecio={ListaEESSPrecio} />
               </div>
             </div>
+
           </div>
         </div>
       </div>
