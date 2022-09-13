@@ -23,7 +23,7 @@ const Card = ({ ListaEESSPrecio }) => {
 
             let { id, Rótulo, Municipio, Dirección, Horario, Provincia } = x;
             return (
-                <div key={id} className="col-6 mb-4 position-relative">
+                <div key={id} className="col-6 mb-3 position-relative">
                     <div className={styles.card}>
                         <img className={`${styles.img} img-fluid`} src="gas.png" alt="icono de gasolinera" />
                         <div className={`${styles.content}`}>

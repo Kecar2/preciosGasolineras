@@ -1,14 +1,14 @@
 import React from 'react';
 import FilterBTN from '../FilterBTN';
 
-const Municipio = () => {
+const Gasolina = () => {
     
     return (
 
         <div className="accordion-item">
             <h2 className="accordion-header" id="headingTwo">
                 <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    Municipio
+                    Gasolina
                 </button>
             </h2>
             <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
@@ -20,4 +20,4 @@ const Municipio = () => {
     )
 }
 
-export default Municipio
+export default Gasolina

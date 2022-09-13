@@ -1,6 +1,6 @@
 import React from 'react';
 import Provincia from './Category/Provincia';
-import Municipio from './Category/Municipio';
+import Gasolina from './Category/Gasolina';
 
 const Filters = () => {
   return (
@@ -11,7 +11,7 @@ const Filters = () => {
       </div>
       <div className="accordion" id="accordionExample">
         <Provincia />
-        <Municipio />
+        <Gasolina />
       </div>
     </div>
   )
